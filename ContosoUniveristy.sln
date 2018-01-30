@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniveristy", "ContosoUniveristy\ContosoUniveristy.csproj", "{1E4AE6A7-E69D-45D6-9C88-22FEE471928D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Data", "Contoso.Data\Contoso.Data.csproj", "{A28F454E-16F4-4836-9CC9-CE78B5683507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Domain", "Contoso.Domain\Contoso.Domain.csproj", "{B550E5E2-A78C-4D12-A837-222C7858E5D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoService", "ContosoService\ContosoService.csproj", "{74D0AA2F-05B5-48BE-AA42-5FE76B9F1B39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E4AE6A7-E69D-45D6-9C88-22FEE471928D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E4AE6A7-E69D-45D6-9C88-22FEE471928D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E4AE6A7-E69D-45D6-9C88-22FEE471928D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E4AE6A7-E69D-45D6-9C88-22FEE471928D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28F454E-16F4-4836-9CC9-CE78B5683507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28F454E-16F4-4836-9CC9-CE78B5683507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28F454E-16F4-4836-9CC9-CE78B5683507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28F454E-16F4-4836-9CC9-CE78B5683507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B550E5E2-A78C-4D12-A837-222C7858E5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B550E5E2-A78C-4D12-A837-222C7858E5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B550E5E2-A78C-4D12-A837-222C7858E5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B550E5E2-A78C-4D12-A837-222C7858E5D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D0AA2F-05B5-48BE-AA42-5FE76B9F1B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D0AA2F-05B5-48BE-AA42-5FE76B9F1B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D0AA2F-05B5-48BE-AA42-5FE76B9F1B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D0AA2F-05B5-48BE-AA42-5FE76B9F1B39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

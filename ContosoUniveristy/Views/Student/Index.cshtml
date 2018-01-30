@@ -1,0 +1,74 @@
+﻿@using Contoso.Domain;
+@model IEnumerable<Contoso.Domain.Student>
+
+@{
+    ViewBag.Title = "Students";
+}
+
+<style type="text/css">
+   .selected{
+    background: #ffffbf;
+    }
+</style>
+
+<h2>Students</h2> 
+
+<p> 
+    @Html.ActionLink("Create New", "Create") 
+</p> 
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) &nbsp;
+        <input type="submit" value="Search" /></p>
+}
+
+<div id="grid">
+
+@{
+    var grid = new WebGrid(Model, defaultSort:"LastName");
+}
+
+@grid.GetHtml(
+    tableStyle : "table",
+    alternatingRowStyle : "alternate",
+    selectedRowStyle: "selected",
+    headerStyle : "header",    
+    columns: grid.Columns(
+        grid.Column(
+            header:"", 
+            format:@<text>@Html.ActionLink("Edit", "Edit", new { id=item.PersonID })</text>
+            ),
+        grid.Column(
+            header:"", 
+            format:@<text>@Html.ActionLink("Delete", "Delete", new { id=item.PersonID })</text>
+            ),            
+        grid.Column(
+            header:"Last Name",
+            columnName : "LastName",
+            format: @<text>@item.LastName</text>
+            ),
+         grid.Column(
+            header: "First Name",
+            columnName : "FirstMidName",
+            format: @<text>@item.FirstMidName</text>
+            ),    
+        grid.Column(
+            header: "Enrollment Date",
+            format: (item) => string.Format("{0:MM/dd/yyyy}", item.EnrollmentDate),
+            columnName : "EnrollmentDate"
+            ) 
+    )
+)
+
+@*Grid with simple colunn customisation*@
+@*@grid.GetHtml(columns: grid.Columns(
+        grid.Column("LastName"),
+        grid.Column("FirstMidName"),
+        grid.Column("EnrollmentDate")
+        )
+    )*@
+
+</div>
+

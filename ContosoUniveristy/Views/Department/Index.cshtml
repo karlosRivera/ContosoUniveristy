@@ -1,0 +1,98 @@
+﻿@using Contoso.Domain.ViewModels;
+@model Contoso.Domain.ViewModels.DepartmentIndexData
+
+
+@{
+    ViewBag.Title = "Departments";
+}
+
+<h2>Departments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Budget</th>
+        <th>Start Date</th>
+        <th>Administrator</th>
+        <th>Courses</th>
+    </tr>
+
+@foreach (var item in Model.Departments) 
+    {
+        string selectedRow = "";
+        if (item.DepartmentID == ViewBag.DepartmentID)
+        {
+            selectedRow = "selectedrow";
+        } 
+    <tr>
+        <td>
+            @Html.ActionLink("Select", "Index", new { id = item.DepartmentID }) | 
+            @Html.ActionLink("Edit", "Edit", new { id=item.DepartmentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DepartmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DepartmentID })
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Budget
+        </td>
+        <td>
+            @item.StartDate
+        </td>
+        <td>
+            @item.Administrator.FullName
+        </td>
+        <td>
+            @{
+            foreach (var course in item.Courses)
+            {
+                    @course.CourseID @:&nbsp; @course.Title <br />
+                }
+            }
+        </td>
+    </tr>
+}
+
+</table>
+
+@if (Model.Courses != null)
+{ 
+    <h3>Department Courses</h3> 
+<table> 
+    <tr> 
+        <th></th> 
+        <th>ID</th> 
+        <th>Title</th> 
+        <th>Department</th> 
+    </tr> 
+ 
+    @foreach (var item in Model.Courses)
+    {
+        string selectedRow = "";
+        if (item.CourseID == ViewBag.CourseID)
+        {
+            selectedRow = "selectedrow";
+        } 
+    <tr class="@selectedRow"> 
+        <td> 
+            @Html.ActionLink("Select", "Index", new { courseID = item.CourseID }) 
+        </td> 
+        <td> 
+            @item.CourseID 
+        </td> 
+        <td> 
+            @item.Title 
+        </td> 
+        <td> 
+            @item.Department.Name 
+        </td> 
+    </tr> 
+    } 
+ 
+</table> 
+}
